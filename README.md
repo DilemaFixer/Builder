@@ -12,15 +12,7 @@ A lightweight utility library for C that provides cross-platform file system ope
 ### Unix (Linux/macOS)
 
 ```bash
-curl -o b.h https://raw.githubusercontent.com/DilemaFixer/Builder/main/b.h
-```
-
-### Windows
-
-For Windows users running in a Unix-like environment (e.g., WSL, Cygwin, or MinGW):
-
-```bash
-curl -o b.h https://raw.githubusercontent.com/DilemaFixer/Builder/main/b.h
+curl -o b.h https://raw.githubusercontent.com/DilemaFixer/Cbuilder/main/b.h
 ```
 
 ## 🧰 API and Usage Examples
