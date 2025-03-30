@@ -5,7 +5,7 @@
 ![Language](https://img.shields.io/badge/language-C-lightgrey)
 ![Version](https://img.shields.io/badge/version-1.0.0-orange)
 
-A lightweight utility library for C that provides cross-platform file system operations, string utilities, and command execution functions for Unix-like operating systems.
+A lightweight utility library for C that provides file system operations, string utilities, and command execution functions for Unix-like operating systems.
 
 ## 📥 Installation
 
