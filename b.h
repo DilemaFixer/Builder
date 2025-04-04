@@ -45,19 +45,49 @@ char* strcat_new(const char* str1, const char* str2);
         fprintf(stderr, "%s[%s] [%s][%s:%d]: " fmt "\n" RESET, color, level, time_buf, __FILE__, __LINE__, ##__VA_ARGS__); \
     } while(0)
 
-#define ERROR(fmt, ...) LOG("ERROR", RED, fmt, ##__VA_ARGS__)
+#define ERROR(fmt, ...)\
+    do { \
+        LOG("ERROR", RED, fmt, ##__VA_ARGS__) \
+        exit(1); \
+    } while(0)
+
 #define WARN(fmt, ...) LOG("WARN", YELLOW, fmt, ##__VA_ARGS__)
 #define INFO(fmt, ...) LOG("INFO", GREEN, fmt, ##__VA_ARGS__)
 #define DEBUG(fmt, ...) LOG("DEBUG", BLUE, fmt, ##__VA_ARGS__)
 #define VERBOSE(fmt, ...) LOG("VERBOSE", CYAN, fmt, ##__VA_ARGS__)
 
-#define FAIL(fmt, ...) \
-    do { \
-        ERROR(fmt, ##__VA_ARGS__); \
-        exit(1); \
-    } while(0)
-
 #define TODO(note) LOG("TODO", MAGENTA, "%s", note)
+
+char* change_extension(const char* file_path, const char* new_ext) {
+    if (!file_path || !new_ext) {
+        ERROR("Invalid parameters for changing extension");
+        return NULL;
+    }
+    
+    char* base_path = strdup(file_path);
+    if (!base_path) {
+        ERROR("Failed to allocate memory for path");
+        return NULL;
+    }
+    
+    char* last_dot = strrchr(base_path, '.');
+    if (last_dot) {
+        *last_dot = '\0'; 
+    }
+    
+    char* new_path = strcat_new(base_path, ".");
+    free(base_path);
+    
+    if (!new_path) {
+        ERROR("Failed to allocate memory for new path");
+        return NULL;
+    }
+    
+    char* result = strcat_new(new_path, new_ext);
+    free(new_path);
+    
+    return result;
+}
 
 // Command execution
 char* joinstr(int count, ...) {
