@@ -32,12 +32,11 @@ The Builder library provides a comprehensive logging system with color-coded out
 ```c
 // Logging macros
 #define LOG(level, color, fmt, ...)
-#define ERROR(fmt, ...)    // Log error messages in red
+#define ERROR(fmt, ...)    // Log error messages in red and exit program
 #define WARN(fmt, ...)     // Log warning messages in yellow
 #define INFO(fmt, ...)     // Log informational messages in green
 #define DEBUG(fmt, ...)    // Log debug messages in blue
 #define VERBOSE(fmt, ...)  // Log verbose messages in cyan
-#define FAIL(fmt, ...)     // Log error message and exit program
 #define TODO(note)         // Log a TODO note in magenta
 ```
 
