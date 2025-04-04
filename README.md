@@ -15,6 +15,14 @@ A lightweight utility library for C that provides file system operations, string
 curl -o b.h https://raw.githubusercontent.com/DilemaFixer/Cbuilder/main/b.h
 ```
 
+### Build
+For working you must create b.c where write code for building project
+
+```bash
+gcc b.c -o b
+./b
+```
+
 ## 🧰 API and Usage Examples
 
 ### 📝 Logging Utilities
