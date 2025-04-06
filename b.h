@@ -47,7 +47,7 @@ char* strcat_new(const char* str1, const char* str2);
 
 #define ERROR(fmt, ...)\
     do { \
-        LOG("ERROR", RED, fmt, ##__VA_ARGS__) \
+        LOG("ERROR", RED, fmt, ##__VA_ARGS__); \
         exit(1); \
     } while(0)
 
