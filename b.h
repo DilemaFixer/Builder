@@ -127,7 +127,7 @@ char* joinstr(int count, ...) {
         if (result != 0) { \
             ERROR("Command failed with code %d: %s", result, cmd); \
         } else { \
-            VERBOSE("Command succeeded: %s", cmd); \
+            VERBOSE("%s", cmd); \
         } \
         free(cmd); \
     } else { \
