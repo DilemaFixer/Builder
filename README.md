@@ -49,13 +49,10 @@ void example_logging() {
     INFO("Starting application");
     DEBUG("Debug information: %d", 42);
     WARN("This is a warning message");
-    ERROR("An error occurred: %s", "file not found");
     VERBOSE("Additional details for troubleshooting");
-    
-    // Fatal error that exits the program
-    // FAIL("Critical error: cannot continue");
-    
     TODO("Implement error handling");
+
+    ERROR("An error occurred: %s", "file not found"); // exit program with error message 
 }
 ```
 
